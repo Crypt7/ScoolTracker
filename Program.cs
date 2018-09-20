@@ -8,7 +8,7 @@ namespace ScoolTracker
         static void Main(string[] args)
         {
             var students = new List<Student>();
-            
+
             var adding = true;
             while (adding)
             {
@@ -16,13 +16,13 @@ namespace ScoolTracker
                 Console.Write("StudentName: ");
                 newStudent.Name = (Console.ReadLine());
                 Console.Write("StudentGrade ");
-                newStudent.Grade=int.Parse(Console.ReadLine());
+                newStudent.Grade = int.Parse(Console.ReadLine());
                 Console.Write("Student birthday: ");
                 newStudent.Birthday = Console.ReadLine();
                 Console.Write("Student adress: ");
                 newStudent.Adress = Console.ReadLine();
                 Console.Write("Student phone: ");
-                newStudent.SetPhone(int.Parse(Console.ReadLine()));
+                newStudent.Phone = int.Parse(Console.ReadLine());
                 Console.WriteLine("Add another? y/n");
                 students.Add(newStudent);
                 if (Console.ReadLine() != "y")
@@ -32,10 +32,10 @@ namespace ScoolTracker
             foreach (var student in students)
 
             {
-               Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}");
+                Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}");
             }
         }
-        
+
     }
     class Student
     {
@@ -45,11 +45,15 @@ namespace ScoolTracker
         public string Adress;
         private int phone;
 
+        public int Phone
+        {
+            set { phone = value; }
+        }
         public void SetPhone(int number)
         {
             phone = number;
         }
 
-        
+
     }
 }
