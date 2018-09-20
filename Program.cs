@@ -12,6 +12,9 @@ namespace ScoolTracker
         {
             var studentNames = new List<string>();
             var studentGrades = new List<int>();
+            var student = new Student();
+            student.Name = Console.ReadLine();
+            Console.Write(student.Name);
             var adding = true;
             while (adding)
             {
@@ -35,6 +38,11 @@ namespace ScoolTracker
     }
     class Student
     {
-
+        public string Name;
+        public int Grade;
+        public string Birthday;
+        public string Adress;
+        public int Phone;
+        
     }
 }
