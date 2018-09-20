@@ -35,8 +35,7 @@ namespace ScoolTracker
             foreach (var student in students)
 
             {
-                //Console.WriteLine("Name: {0}, Grade: {1}", studentNames[i], studentGrades[i]);
-                Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}, Phone {student.Phone}");
+               Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}, Phone {student.Phone}");
             }
         }
         
