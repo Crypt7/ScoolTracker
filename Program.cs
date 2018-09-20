@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ScoolTracker
 {
@@ -25,7 +22,7 @@ namespace ScoolTracker
                 Console.Write("Student adress: ");
                 newStudent.Adress = Console.ReadLine();
                 Console.Write("Student phone: ");
-                newStudent.Phone=int.Parse(Console.ReadLine());
+                newStudent.SetPhone(int.Parse(Console.ReadLine()));
                 Console.WriteLine("Add another? y/n");
                 students.Add(newStudent);
                 if (Console.ReadLine() != "y")
@@ -35,7 +32,7 @@ namespace ScoolTracker
             foreach (var student in students)
 
             {
-               Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}, Phone {student.Phone}");
+               Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}");
             }
         }
         
@@ -46,7 +43,13 @@ namespace ScoolTracker
         public int Grade;
         public string Birthday;
         public string Adress;
-        public int Phone;
+        private int phone;
+
+        public void SetPhone(int number)
+        {
+            phone = number;
+        }
+
         
     }
 }
