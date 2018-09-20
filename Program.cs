@@ -10,28 +10,33 @@ namespace ScoolTracker
     {
         static void Main(string[] args)
         {
-            var studentNames = new List<string>();
-            var studentGrades = new List<int>();
-            var student = new Student();
-            student.Name = Console.ReadLine();
-            Console.Write(student.Name);
+            var students = new List<Student>();
+            
             var adding = true;
             while (adding)
             {
+                var newStudent = new Student();
                 Console.Write("StudentName: ");
-                studentNames.Add(Console.ReadLine());
-
+                newStudent.Name = (Console.ReadLine());
                 Console.Write("StudentGrade ");
-                studentGrades.Add(int.Parse(Console.ReadLine()));
+                newStudent.Grade=int.Parse(Console.ReadLine());
+                Console.Write("Student birthday: ");
+                newStudent.Birthday = Console.ReadLine();
+                Console.Write("Student adress: ");
+                newStudent.Adress = Console.ReadLine();
+                Console.Write("Student phone: ");
+                newStudent.Phone=int.Parse(Console.ReadLine());
                 Console.WriteLine("Add another? y/n");
+                students.Add(newStudent);
                 if (Console.ReadLine() != "y")
                     adding = false;
             }
 
-            for (int i = 0; i < studentNames.Count; i++)
+            foreach (var student in students)
+
             {
                 //Console.WriteLine("Name: {0}, Grade: {1}", studentNames[i], studentGrades[i]);
-                Console.WriteLine($"Name: {studentNames[i]}, Grade: {studentGrades[i]}");
+                Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}, Phone {student.Phone}");
             }
         }
         
