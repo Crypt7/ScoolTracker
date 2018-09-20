@@ -23,7 +23,7 @@ namespace ScoolTracker
                 Console.WriteLine("Add another? y/n");
                 if (Console.ReadLine() != "y")
                     adding = false;
-             }
+            }
 
             for (int i = 0; i < studentNames.Count; i++)
             {
