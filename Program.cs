@@ -13,16 +13,11 @@ namespace ScoolTracker
             while (adding)
             {
                 var newStudent = new Student();
-                Console.Write("StudentName: ");
-                newStudent.Name = (Console.ReadLine());
-                Console.Write("StudentGrade ");
-                newStudent.Grade = int.Parse(Console.ReadLine());
-                Console.Write("Student birthday: ");
-                newStudent.Birthday = Console.ReadLine();
-                Console.Write("Student adress: ");
-                newStudent.Adress = Console.ReadLine();
-                Console.Write("Student phone: ");
-                newStudent.Phone = int.Parse(Console.ReadLine());
+                newStudent.Name=Util.Console.Asc("StudentName: ");
+                newStudent.Grade = int.Parse(Util.Console.Asc("Student Grade: "));
+                newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
+                newStudent.Adress = Util.Console.Asc("Student adress: ");
+                newStudent.Phone = int.Parse(Util.Console.Asc("Student Phone: "));
                 Console.WriteLine("Add another? y/n");
                 students.Add(newStudent);
                 Student.Count++;

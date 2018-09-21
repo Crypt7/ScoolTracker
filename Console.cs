@@ -8,5 +8,10 @@ namespace Util
 {
     class Console
     {
+        static public string Asc(string question)
+        {
+            System.Console.Write(question);
+            return System.Console.ReadLine();
+        }
     }
 }
