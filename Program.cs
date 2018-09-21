@@ -37,13 +37,21 @@ namespace ScoolTracker
     class Student
     {
         static public int Count;
-        public string Name;
+        public string Name; 
         public int Grade;
         public string Birthday;
         public string Adress;
         private int phone;
         public Student()
         {
+        }
+        public Student(string name, int grade, string birthday, string adress, int phone)
+        {
+            Name = name;
+            Grade = grade;
+            Birthday = birthday;
+            Adress = adress;
+            Phone = phone;
             Console.WriteLine("Constructor");
         }
         public int Phone
