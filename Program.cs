@@ -42,7 +42,10 @@ namespace ScoolTracker
         public string Birthday;
         public string Adress;
         private int phone;
-
+        public Student()
+        {
+            Console.WriteLine("Constructor");
+        }
         public int Phone
         {
             set { phone = value; }
