@@ -25,6 +25,8 @@ namespace ScoolTracker
                 newStudent.Phone = int.Parse(Console.ReadLine());
                 Console.WriteLine("Add another? y/n");
                 students.Add(newStudent);
+                Student.Count++;
+                Console.WriteLine($"Student count: {Student.Count}");
                 if (Console.ReadLine() != "y")
                     adding = false;
             }
@@ -39,7 +41,7 @@ namespace ScoolTracker
     }
     class Student
     {
-        static public int count;
+        static public int Count;
         public string Name;
         public int Grade;
         public string Birthday;
