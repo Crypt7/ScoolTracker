@@ -39,6 +39,7 @@ namespace ScoolTracker
     }
     class Student
     {
+        static public int count;
         public string Name;
         public int Grade;
         public string Birthday;
