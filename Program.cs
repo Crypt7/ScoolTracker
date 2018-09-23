@@ -13,7 +13,7 @@ namespace ScoolTracker
             while (adding)
             {
                 var newStudent = new Student();
-                newStudent.Name=Util.Console.Asc("StudentName: ");
+                newStudent.Name = Util.Console.Asc("StudentName: ");
                 newStudent.Grade = int.Parse(Util.Console.Asc("Student Grade: "));
                 newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
                 newStudent.Adress = Util.Console.Asc("Student adress: ");
@@ -34,14 +34,11 @@ namespace ScoolTracker
         }
 
     }
-    class Student
+    class Student :Member
     {
         static public int Count;
-        public string Name; 
         public int Grade;
         public string Birthday;
-        public string Adress;
-        private int phone;
         public Student()
         {
         }
@@ -62,7 +59,21 @@ namespace ScoolTracker
         {
             phone = number;
         }
-
-
     }
+    class Member
+    {
+        public string Name;
+        public string Adress;
+        protected int phone;
+    } 
+    class Teacher
+    {
+        public string Name;
+        public string Adress;
+        public int PhoneNumber;
+        public string Subject;
+    }
+     
+    
+
 }
