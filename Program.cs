@@ -66,12 +66,13 @@ namespace ScoolTracker
         public string Adress;
         protected int phone;
     } 
-    class Teacher
+    class Teacher :Member
     {
-        public string Name;
-        public string Adress;
-        public int PhoneNumber;
-        public string Subject;
+      public string Subject;
+        public int Phone
+        {
+            set { phone = value; }
+        }
     }
      
     
