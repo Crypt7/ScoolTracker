@@ -12,23 +12,33 @@ namespace ScoolTracker
             var adding = true;
             while (adding)
             {
-                var newStudent = new Student();
-                newStudent.Name = Util.Console.Asc("StudentName: ");
-                var result = int.TryParse(Util.Console.Asc("Student Grade: "), out newStudent.Grade);
-
-                if (!result)
+                try
                 {
-                    Console.WriteLine("Error please enter a number");
+                    var newStudent = new Student();
+                    newStudent.Name = Util.Console.Asc("StudentName: ");
+                    var z = 0;
+                    var a = 1 / z;
+                    newStudent.Grade = int.Parse(Util.Console.Asc("Student Grade: "));
+                    newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
+                    newStudent.Adress = Util.Console.Asc("Student adress: ");
+                    newStudent.Phone = int.Parse(Util.Console.Asc("Student Phone: "));
+                    Console.WriteLine("Add another? y/n");
+                    students.Add(newStudent);
+                    Student.Count++;
+                    Console.WriteLine($"Student count: {Student.Count}");
+                    if (Console.ReadLine() != "y")
+                        adding = false;
                 }
-                newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
-                newStudent.Adress = Util.Console.Asc("Student adress: ");
-                newStudent.Phone = int.Parse(Util.Console.Asc("Student Phone: "));
-                Console.WriteLine("Add another? y/n");
-                students.Add(newStudent);
-                Student.Count++;
-                Console.WriteLine($"Student count: {Student.Count}");
-                if (Console.ReadLine() != "y")
-                    adding = false;
+              
+                catch (FormatException)
+                {
+                    Console.WriteLine("Input was not a number");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error adding student, Please try again");
+                } 
+
             }
 
             foreach (var student in students)
