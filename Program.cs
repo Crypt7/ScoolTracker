@@ -7,6 +7,7 @@ namespace ScoolTracker
     {
         static void Main(string[] args)
         {
+           
             var students = new List<Student>();
 
             var adding = true;
@@ -17,6 +18,7 @@ namespace ScoolTracker
                     var newStudent = new Student();
                     newStudent.Name = Util.Console.Asc("StudentName: ");
                     newStudent.Grade = Util.Console.AskInt("Student Grade: ");
+                    newStudent.School = Util.Console.AskInt("School Name: (type corresponding number: \n 0: Hogwarts Hight \n 1: Harvard \n 2: MIT \n)");
                     newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
                     newStudent.Adress = Util.Console.Asc("Student adress: ");
                     newStudent.Phone = Util.Console.AskInt("Student Phone: ");
@@ -44,14 +46,20 @@ namespace ScoolTracker
             {
                 Console.WriteLine($"Name: {student.Name}, Grade: {student.Grade}, Birthday: {student.Birthday}, Adress: {student.Adress}");
             }
+          
         }
-
+        static void Import()
+        {
+            var importedStudent = new Student("Jenny", 86, "birthday", "adress", 123456);
+            Console.WriteLine(importedStudent.Name);
+        }
     }
     class Student :Member
     {
         static public int Count;
         public int Grade;
         public string Birthday;
+        public int School; 
         public Student()
         {
         }
