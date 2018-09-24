@@ -16,12 +16,10 @@ namespace ScoolTracker
                 {
                     var newStudent = new Student();
                     newStudent.Name = Util.Console.Asc("StudentName: ");
-                    var z = 0;
-                    var a = 1 / z;
-                    newStudent.Grade = int.Parse(Util.Console.Asc("Student Grade: "));
+                    newStudent.Grade = Util.Console.AskInt("Student Grade: ");
                     newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
                     newStudent.Adress = Util.Console.Asc("Student adress: ");
-                    newStudent.Phone = int.Parse(Util.Console.Asc("Student Phone: "));
+                    newStudent.Phone = Util.Console.AskInt("Student Phone: ");
                     Console.WriteLine("Add another? y/n");
                     students.Add(newStudent);
                     Student.Count++;
@@ -30,9 +28,9 @@ namespace ScoolTracker
                         adding = false;
                 }
               
-                catch (FormatException)
+                catch (FormatException msg)
                 {
-                    Console.WriteLine("Input was not a number");
+                    Console.WriteLine(msg.Message);
                 }
                 catch (Exception)
                 {
