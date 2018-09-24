@@ -14,7 +14,12 @@ namespace ScoolTracker
             {
                 var newStudent = new Student();
                 newStudent.Name = Util.Console.Asc("StudentName: ");
-                newStudent.Grade = int.Parse(Util.Console.Asc("Student Grade: "));
+                var result = int.TryParse(Util.Console.Asc("Student Grade: "), out newStudent.Grade);
+
+                if (!result)
+                {
+                    Console.WriteLine("Error please enter a number");
+                }
                 newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
                 newStudent.Adress = Util.Console.Asc("Student adress: ");
                 newStudent.Phone = int.Parse(Util.Console.Asc("Student Phone: "));
