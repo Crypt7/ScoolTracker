@@ -14,6 +14,8 @@ namespace ScoolTracker
         static List<Student> students = new List<Student>();
         static void Main(string[] args)
         {
+            PayRoll payroll = new PayRoll();
+            payroll.PayAll();
             var adding = true;
             while (adding)
             {
@@ -111,15 +113,4 @@ namespace ScoolTracker
         public string Adress;
         protected int phone;
     } 
-    class Teacher :Member
-    {
-      public string Subject;
-        public int Phone
-        {
-            set { phone = value; }
-        }
-    }
-     
-    
-
 }
