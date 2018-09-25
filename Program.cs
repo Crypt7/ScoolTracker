@@ -14,20 +14,17 @@ namespace ScoolTracker
         static List<Student> students = new List<Student>();
         static void Main(string[] args)
         {
-           
-            
-
             var adding = true;
             while (adding)
             {
                 try
                 {
                     var newStudent = new Student();
-                    newStudent.Name = Util.Console.Asc("StudentName: ");
+                    newStudent.Name = Util.Console.Ask("StudentName: ");
                     newStudent.Grade = Util.Console.AskInt("Student Grade: ");
                     newStudent.School = (School) Util.Console.AskInt("School Name: (type corresponding number: \n 0: Hogwarts Hight \n 1: Harvard \n 2: MIT \n)");
-                    newStudent.Birthday = Util.Console.Asc("Student Birthday: ");
-                    newStudent.Adress = Util.Console.Asc("Student adress: ");
+                    newStudent.Birthday = Util.Console.Ask("Student Birthday: ");
+                    newStudent.Adress = Util.Console.Ask("Student adress: ");
                     newStudent.Phone = Util.Console.AskInt("Student Phone: ");
                     Console.WriteLine("Add another? y/n");
                     students.Add(newStudent);
